@@ -1,3 +1,5 @@
+#!/bin/bash
+
 git init
 #<----- if you don't want to add files with .log extenstion and .gitGraph/ directory ----->
 

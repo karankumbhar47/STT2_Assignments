@@ -1,3 +1,4 @@
+#!/bin/bash
 
 #initializing git
 git init
