@@ -14,7 +14,7 @@ git commit -m"first commit"
 
 #<----- if you already committed files but you want to ignore them ----->
 # update .gitignore file by adding 
-echo "*log" > .gitignore
+echo "*.log" > .gitignore
 echo ".gitGraph/" >> .gitignore
 
 #remove added files
