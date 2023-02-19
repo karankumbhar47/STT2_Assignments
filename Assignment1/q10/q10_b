@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Below command will give us the branch which has the latest commit
+lastBranch=$(echo "$(git log --oneline --decorate --all -1)" | awk '{print $(NF-1)}' | sed 's,[()] ,,g'| sed 's/(//' | sed 's/)//')
+
+#Checkout to the branch which had the latest commit.
+git checkout $lastBranch
+
+#Looping through the branches and merging the contents in the checkout branch
+
+for i in master 12140860 12140110 12140540;
+do 
+  if [ "$lastBranch" != "$i" ];
+  then
+    #Below command will not the merge message
+    git merge --no-edit "$i"
+    #Below command will not show any blobs and trees in the git graph
+    git graph -n commits
+    sleep 1
+  fi
+done
+
