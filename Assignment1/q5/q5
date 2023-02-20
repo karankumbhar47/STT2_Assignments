@@ -1,18 +1,16 @@
 # #!/bin/bash
+#find .git/objects -type f | sed 's/\.git\/objects\///g'| sed 's/\///g'
 
 # Go to the .git/objects directory
-cd ".git/objects"
+allFiles=$(echo find .git/objects -type f | sed 's/\.git\/objects\///g'| sed 's/\///g')
 
 # Loop through all subdirectories in the objects directory
-for d in ./*; 
-do
-
-  for f in "$d"/*; 
-  do    
-    
+for file in $allFiles; 
+  do
     #finding type of file
-    sha=$(echo "$d${f#$d}"| sed 's/\///g' | sed 's/\.//g')
-    type=$(git cat-file -t $sha 2>/dev/null)
+    sha=$file
+    echo "$file"
+    type=$(git cat-file -t $sha )
 
     #blob object
     if [ "$type" == "blob" ] 
@@ -41,4 +39,3 @@ do
 
   done
 
-done
