@@ -1,32 +1,33 @@
 #!/bin/bash
 
+
+#########################################################################
+#                       Iterative Shell Script                          #
+#########################################################################
+
+
 #Initializing Git
 git init 
 
 #Creating 10 files and committing all of them by looping
 for i in {1..10};
-
 do
+
     touch "f$i"
     git add "f$i"
     git commit -m "This is commit number $i"
+
 done
 
-#Finding the hash value of root commit
-root=$(git rev-list --max-parents=0 HEAD)
 
-#Finding the hash value of current commit
-commit=$(git rev-parse HEAD)
-
-for j in {1..10};
+#creating branch at every ancestor of last commit 
+for i in {1..9};
 do 
-    if [ $commit != $root ]
-    then 
-        parent=$(git rev-parse "$commit~")
-        branch=$(git rev-parse --short "$commit")
-        echo "========================================================================"
-        git checkout -b "$branch"
-        echo -e "Creating branch at $commit\n"
-        commit=$parent
-    fi
+
+    parent=$(git rev-parse "HEAD~$i")
+    branch=$(git rev-parse --short "HEAD~$i")
+    echo "========================================================================"
+    git branch "$branch" "$parent"
+    echo -e "Creating branch at $parent\n"
+
 done

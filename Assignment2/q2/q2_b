@@ -16,20 +16,26 @@ done
 root=$(git rev-list --max-parents=0 HEAD)
 
 #Finding the hash value of current commit
-commit=$(git rev-parse HEAD)
+current_hash=$(git rev-parse HEAD)
 
 #Making a recursive function and creating branches on every ancestor of last commit.
+#function definition
 create_branches() {
-    if [ $commit != $root ]
+    if [ $1 != $root ]
     then 
-        parent=$(git rev-parse "$commit^")
-        branch=$(git rev-parse --short "$commit")
+        current_hash=$1
+        parent=$(git rev-parse "$current_hash^")
+        branch=$(git rev-parse --short "$current_hash^")
         echo "========================================================================"
-        git checkout -b "$branch"
-        echo -e "Creating branch at $commit\n"
-        commit=$parent
+        git checkout $parent
+        git branch "$branch"
+        echo -e "Creating branch at ancestor of $current_hash\n"
         create_branches "$parent"
     fi 
 }
 
-create_branches "$commit"
+#function call
+create_branches "$current_hash"
+
+#checking out to master again
+git checkout master 
