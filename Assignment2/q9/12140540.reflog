@@ -1,0 +1,12 @@
+3e50ca9 (origin/12140110) refs/remotes/origin/12140110@{0}: pull origin: storing head
+146f750 (origin/12140860) refs/remotes/origin/12140860@{0}: pull origin: storing head
+021a20b (HEAD -> 12140540, origin/12140540) refs/remotes/origin/12140540@{0}: update by push
+021a20b (HEAD -> 12140540, origin/12140540) refs/heads/12140540@{0}: commit: Second Commit in 12140540 branch
+021a20b (HEAD -> 12140540, origin/12140540) HEAD@{0}: commit: Second Commit in 12140540 branch
+a4dc9e6 refs/heads/12140540@{1}: commit: First Commit in 12140540 branch
+a4dc9e6 HEAD@{1}: commit: First Commit in 12140540 branch
+3eb3ccd (origin/master, master) refs/heads/12140540@{2}: branch: Created from HEAD
+3eb3ccd (origin/master, master) HEAD@{2}: checkout: moving from master to 12140540
+3eb3ccd (origin/master, master) refs/remotes/origin/master@{0}: update by push
+3eb3ccd (origin/master, master) refs/heads/master@{0}: commit (initial): First Commit
+3eb3ccd (origin/master, master) HEAD@{3}: commit (initial): First Commit
