@@ -1,0 +1,44 @@
+#!bin/bash
+
+#Initializing Git
+git init
+
+#Creating file f1 and committing it
+echo "IITBhilai Rocks" > f1
+
+git add f1
+git commit -m "First Commit"
+
+#Creating branch
+git branch feature
+
+#Creating f2 in master branch and committing it
+echo "IITRocks" > f2
+git add f2
+git commit -m "Second Commit"
+
+#Checking out to feature branch and committing it
+git checkout feature
+echo "GitRocks" > f2
+git add f1
+git commit -m "First Commit in feature branch"
+
+#Coming back to master branch and merge it
+git checkout master
+git merge feature
+
+#The above command will create a confict with its message being like the below one
+
+# Auto-merging f2
+# CONFLICT (add/add): Merge conflict in f2
+# Automatic merge failed; fix conflicts and then commit the result.
+
+#In order to resolve the conflict we use the vim and when resolved, we come out of the vim
+vim f2
+
+#Committing the resolved conflict in master
+git add f2
+git commit -m "Resolved conflict between master and feature"
+
+#Showing git graph
+git graph
