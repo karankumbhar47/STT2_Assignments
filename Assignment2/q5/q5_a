@@ -1,0 +1,19 @@
+
+#Changing the commit message using git commit --amend
+
+#!/bin/bash
+
+#Initializing Git
+git init
+
+#Creating file and committing it
+echo "IITRocks" > f1
+git add f1
+git commit -m "Added f1"
+
+#Changing the previous commit's commit message
+
+git commit --amend -m "Added IIT without Bhilai"
+
+#Showing git graph
+git graph

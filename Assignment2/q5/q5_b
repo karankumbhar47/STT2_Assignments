@@ -1,0 +1,28 @@
+
+#Splitting one commit into two commits using git commit --amend
+
+#!/bin/bash
+
+#Initializing Git
+git init
+
+#Creating two files and committing it
+echo "IITRocks" > f1
+echo "Git" > f2
+
+git add f1 f2
+git commit -m "Adding f1 and f2"
+
+#Removing the files from repository
+git rm --cache f1 f2
+
+#Replacing the first commit with other commit using amend
+git add f1
+git commit --amend -m "Added f1"
+
+#Committing f2
+git add f2
+git commit -m "Added f2"
+
+#Showing git graph
+git graph

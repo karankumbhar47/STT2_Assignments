@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#Initializing Git
+git init
+
+#Creating f1 and f2 and adding them so that they starts getting tracked by git
+echo "IITBhilaiRocks" > f1
+echo "Git" > f2
+
+git add f1 f2
+
+#Then we modify it(upto the wish of user)
+echo "STT" >> f1
+echo "GitRocks" >> f2
+
+#Committing without staging the files
+git commit -a -m "Added f1 and f2"
