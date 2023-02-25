@@ -1,0 +1,13 @@
+021a20b (origin/12140540) refs/remotes/origin/12140540@{0}: pull origin: storing head
+146f750 (origin/12140860) refs/remotes/origin/12140860@{0}: pull origin: storing head
+3e50ca9 (HEAD -> 12140110, origin/12140110) refs/remotes/origin/12140110@{0}: update by push
+3e50ca9 (HEAD -> 12140110, origin/12140110) refs/heads/12140110@{0}: commit: second commit on 12140110
+3e50ca9 (HEAD -> 12140110, origin/12140110) HEAD@{0}: commit: second commit on 12140110
+cb5ddea refs/heads/12140110@{1}: commit: first commit on 12140110
+cb5ddea HEAD@{1}: commit: first commit on 12140110
+3eb3ccd (origin/master, master) refs/heads/12140110@{2}: branch: Created from HEAD
+3eb3ccd (origin/master, master) HEAD@{2}: checkout: moving from master to 12140110
+3eb3ccd (origin/master, master) refs/heads/master@{0}: initial pull
+3eb3ccd (origin/master, master) refs/remotes/origin/master@{0}: pull origin master: storing head
+3eb3ccd (origin/master, master) HEAD@{3}: initial pull
+
