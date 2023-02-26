@@ -20,7 +20,7 @@ git commit -m "Second Commit"
 #Checking out to feature branch and committing it
 git checkout feature
 echo "GitRocks" > f2
-git add f1
+git add f2
 git commit -m "First Commit in feature branch"
 
 #Coming back to master branch and merge it
